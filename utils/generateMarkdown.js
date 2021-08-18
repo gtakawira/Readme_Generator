@@ -15,17 +15,17 @@ function renderLicenseSection(license) {}
 // TODO: Create a function to generate markdown for README
 function generateMarkdown(data) {
   return ` 
-# **${data.title}**  
+# **${data.title}**   [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
   ${data.description}
  
 ## Table of Contents
 * [Installation](#installation)
 * [Usage](#usage)
 * [License](#license)
-* [Tests](#Tests)
-* [Contributions](#Contributions)
-* [Credits](#Credits)
-* [Contact](#Contact)
+* [Tests](#tests)
+* [Contributions](#contributions)
+* [Credits](#credits)
+* [Questions](#questions)
 
 
 ## Installation
@@ -37,7 +37,7 @@ Click to download:  [${data.download}]
 ${data.usage}
 
 ## License
-### ${data.licence}
+### *${data.licence}*
 ${renderLicenseSection(data.licence)}
 
 ## Contributions
@@ -45,6 +45,9 @@ ${renderLicenseSection(data.licence)}
 
 ## Tests
   ${data.test}
+
+## Credits
+  ${data.credits}
 
 ## Questions
   If you have any questions I can be reached at:

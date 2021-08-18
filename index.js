@@ -35,7 +35,7 @@ const questions = [
     {
         type: 'input',
         name: 'credit',
-        message: 'It there anyone who should be credited?'
+        message: 'Is there anyone who should be credited for the code?'
     },
     {
         type: 'input',
