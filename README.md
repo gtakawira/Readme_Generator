@@ -19,7 +19,12 @@ Download:  [https://github.com/gtakawira/Readme_Generator/archive/refs/heads/mai
 
 ## Usage
       node index.js
+      
+ Demo: https://drive.google.com/file/d/1Y1DU0hTqk3mPUGdP0nd684mMtMS1pNNm/view
+ 
   ![demo](/assets/images/test.gif)
+  
+  
 
 ## License
 ### [**MIT**](https://opensource.org/licenses/MIT)
