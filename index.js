@@ -1,10 +1,10 @@
-// TODO: Include packages needed for this application
+// Packages needed for this application
 const inquirer = require("inquirer")
 const fs=require('fs')
-const genarateMarkdown = require('./utils/generateMarkdown');
+const chalk = require('chalk');
 const generateMarkdown = require("./utils/generateMarkdown");
 
-// TODO: Create an array of questions for user input
+// An array of questions for user input
 const questions = [
     {
         type: 'input',
@@ -23,6 +23,18 @@ const questions = [
     },
     {
         type: 'input',
+        name: 'usage',
+        message: 'How do you use the application?',
+        
+    },
+    {
+        type: 'input',
+        name: 'image',
+        message: 'Add image/gif file to /assets/images folder of your application. What is your file name including the extension?',
+        
+    },
+    {
+        type: 'input',
         name: 'test',
         message: 'How do you test it?'
     },
@@ -34,7 +46,7 @@ const questions = [
     },
     {
         type: 'input',
-        name: 'credit',
+        name: 'credits',
         message: 'Is there anyone who should be credited for the code?'
     },
     {
@@ -57,13 +69,19 @@ const questions = [
         type: 'list',
         name: 'licence',
         message: 'What is your preferred licence?',
-        choices: ['MIT', 'BSD', 'GPL', 'APACHE']
+        choices: ['MIT', 'BSD', 'GPL', 'APACHE','NONE']
+    },
+    {
+        type: 'input',
+        name: 'year',
+        message: 'What is the copyright year?',
+        
     }
 ];
 
 
 
-// TODO: Create a function to write README file
+// A function to write README file
 function writeToFile(file, data) { 
     
     fs.writeFile(file, data, (err) => {
@@ -73,16 +91,14 @@ function writeToFile(file, data) {
 
 
 
-// TODO: Create a function to initialize app
+// A function to initialize app
 function init() {
-    console.log(`
-    ************************************************************
-    Ready to generate a Readme, Answer the following Questions
-    ************************************************************`);
+    console.log(chalk.blue(`
+    ********************************************************************
+    Ready to generate a Readme document? Answer the following Questions
+    ********************************************************************`));
     inquirer.prompt(questions).then((data) => {
-    ;
-    writeToFile('README.md',generateMarkdown(data),)
-
+        writeToFile('README.md',generateMarkdown(data))
      });}
 
     
